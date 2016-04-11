@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <script src="./gameJs.js"></script>
+  <title>Betting Game</title>
+</head>
+<body>
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <div class="page-header">
+        <h1>Welcome to my Betting Game! <small>A (relatively) safe  alternative to gambling.</small></h1>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  
+  <div class="row">
+    <div class="col-md-4 col-lg-4">
+      <div class="jumbotron" style="border-radius: 20px;">
+        <h3 style="margin-top: 0px;">Here are the rules...</h3>
+          <ul class="list-group">
+            <li class="list-group-item">Upon clicking the "Start Playing!" button below...</li>
+            <li class="list-group-item">You will input your starting amount in dollars, place your bet in dollars, and specify your odds.</li>
+            <li class="list-group-item">After locking in your bet...</li>
+            <li class="list-group-item">You will take a guess and click "There's no going back". If you guess the same number as the computer, you win the amount you bet, otherwise, you lose the amount you bet.</li>
+            <li class="list-group-item">You may click that button as many times as you want and you are able to reset the game by clicking the button in the bottom right. Goodluck!</li>
+          </ul>
+        <p><a class="btn btn-success btn-lg center-block" href="#" role="button" id="startPlaying">Start Playing!</a></p>
+      </div>
+    </div>
+
+    <div class="col-md-4 col-lg-4 center-block" id="middleCol" style="display: none;">
+      <h3> Set your parameters </h3>
+      <form id="submitForm">
+        <div class="input-group" style="margin-top: 45px;">
+          <span class="input-group-addon">$</span>
+          <input id="initAmount" title="Please insert a number only" type="number" class="form-control" placeholder="Initial Amount" required>
+        </div>
+
+        <div class="input-group" style="margin-top: 45px;"> 
+          <label> Place your Bet </label>
+          <input id="bet" title="Please insert a number only" type="number" class="form-control" placeholder="Bet" required>
+        </div>
+
+        <div class="input-group" style="margin-top: 45px;">
+          <label> Specify odds(1 in x) </label>
+          <input id="odds" title="Please insert a number only" type="number" class="form-control" placeholder="x" required>
+        </div>
+
+        <div>
+          <button id="submitInfo" class="btn btn-warning btn-lg center-block" style="margin-top: 45px;"> Place your bet... </button>
+        </div>
+        </form>
+    </div>
+
+    <div class="col-md-4 col-lg-4 center-block" id="rightCol" style="display: none;">
+      <h3> Test your luck! </h3>
+        <div class="input-group" style="margin-top: 100px;">
+          <form id="submitFormBet">
+          <div id="guess_output">
+          </div>
+          <input id="guess" type="number" title="Please insert a number only" class="form-control" placeholder="Your guess" required>
+        </div>
+        <div>
+          <button id="submitBet" class="btn btn-danger btn-lg center-block" style="margin-top: 10px"> There's no going back... </button>
+        </div>
+        </form>
+    </div>
+
+  </div>
+
+
+  <div class="row" id="bottomRow" style="display: none;">
+    <div class="col-md-8 col-lg-8">
+
+      <div id="your_money"></div>
+      <div class="progress">
+        <div role="progressbar" id="progressBar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 col-lg-4">
+      <div class="game_output" style="display: none;"></div>
+      <div style="position: fixed; right: 0px; bottom: 0px;">
+        <button id="refresh" class="btn btn-success btn-sm"> Reset </button>
+      </div>
+    </div>
+  </div>  
+
+
+
+</body>
+</html>
