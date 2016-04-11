@@ -63,7 +63,7 @@ var percentageBar = function(percentage) {
     progressBar.attr('class', 'progress-bar progress-bar-success')
                .animate({width: percentage+'%'},1000);
   }
-  debugger;
+  
 
   if (percentage > 75){
     //green bar
